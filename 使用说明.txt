@@ -1,0 +1,15 @@
+1.本项目使用cmake-gui生成VS工程,使用cmake-gui时，“where is the source code”填写:“ffmpegH264”的绝对路径，
+“where to build the binaries”填写"ffmpegH264\build"的绝对路径，然后依次点击"configure"和"Generate"按钮便可在build目录下生产VS工程；
+2.生成VS工程后，将ffmpegH264目录中的config.h文件替换为ffmpegH264_win_cfg目录中的config.h文件；
+3.将启动项设置为h264_sdl2，然后编译；
+4.调试运行时输入相关的命令参数，如：-n -i xxx.264 -o xxx.yuv。
+注：
+1.该项目基于FFmpeg 3.2.4版本；
+2.FFmpeg中的部分语法需要VS2013及以上编译器支持；
+3.编译该项目是在cmake-gui中请选择VS2013对应的x64编译器；
+4.本项目优化部分需要Yasm汇编器支持；
+5.如需要添加更多功能，请更改"CMakeLists.txt"文件；
+6.config.h文件的生成可以在Linux或相关环境中生成，然后更改其中的宏使其支持windows环境；
+7.运行时如果提示找不到SDL2.dll，请将该目录下SDL2/lib/x64下的SDL2.dll放到系统环境变量所能找到的目录，
+比如C:/Windows/system32或其他目录；
+8.生成该项目时，借助了openHEVC项目的一些源文件、配置文件和组织方式，在此表示感谢。
